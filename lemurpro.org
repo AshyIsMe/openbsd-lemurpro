@@ -3,7 +3,7 @@
 
 * Hardware
 
-The Lemur Pro I have is a [[https://tech-docs.system76.com/models/lemp10/README.html][lemp10 model] configured with an i7-1165G7 and an extra 32GB Crucial ram stick in the single SODIMM slot
+The Lemur Pro I have is a [[https://tech-docs.system76.com/models/lemp10/README.html][lemp10]] model configured with an i7-1165G7 and an extra 32GB Crucial ram stick in the single SODIMM slot
 bringing the total up to 40GB ram. It shipped with a WDC 500GB nvme and I have put a Samsung 980 500GB nvme in the second slot.
 The wifi card is an Intel Wi-Fi 6 AX201 removable card.
 The lemp10 shipped with Coreboot which has a nice and simple interface which I only really use to select which nvme drive to boot (Pop!_OS or OpenBSD).
