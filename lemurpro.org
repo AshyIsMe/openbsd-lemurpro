@@ -1,0 +1,41 @@
+#+TITLE: OpenBSD on the System76 Lemur Pro
+
+
+* Hardware
+
+The Lemur Pro I have is a [[https://tech-docs.system76.com/models/lemp10/README.html][lemp10 model] configured with an i7-1165G7 and an extra 32GB Crucial ram stick in the single SODIMM slot
+bringing the total up to 40GB ram. It shipped with a WDC 500GB nvme and I have put a Samsung 980 500GB nvme in the second slot.
+The wifi card is an Intel Wi-Fi 6 AX201 removable card.
+The lemp10 shipped with Coreboot which has a nice and simple interface which I only really use to select which nvme drive to boot (Pop!_OS or OpenBSD).
+The keyboard and trackpad are pretty good and the build quality overall is pretty nice (not macbook quality but good enough).
+It's a small lightweight laptop that feels similar in weight and size to my old macbook air 11" (2012) though the screen is much larger and nicer.
+
+* Install process
+The OpenBSD 6.9 install process was straight forward and as per the official documentation.
+
+An issue at first was that the intel Tiger Lake onboard graphics are not supported on OpenBSD 6.9 and
+will panic the kernel when attempting to startx.  This has been fixed sometime after the 6.9 release
+however so updating to the latest snapshot allows xenocara to run and gnome works fine.
+
+* Packages and configuration
+
+Coming from linux the OpenBSD package manager is surprisingly slow.
+A quick google shows that seems to be fairly well known but clearly not a big enough issue for the devs to spend
+any time on it.
+`doas pkg_add vim git emacs gnome gnome-extras ...`
+
+
+* Current OpenBSD Support Summary
+
+| Component                  | Works? | Notes                                                                                                                               |
+|----------------------------+--------+-------------------------------------------------------------------------------------------------------------------------------------|
+| Audio                      | Yes    | Speakers work. Microphone also works with `sysctl kern.audio.record=1`.                                                             |
+| Battery status             | Yes    | Shows up in apm.                                                                                                                    |
+| Bluetooth                  | No     | Shows up as a ugen device. OpenBSD does not support Bluetooth curerntly.                                                            |
+| Keyboard Backlight         | Yes    | Toggles with Fn+F4 between 5 brightness levels.                                                                                     |
+| Hibernation/Suspend/Resume | ?      | ZZZ shows an acpi error "S3 not available", screen turns off but the power doesnt shut off and fan keeps spinning.                  |
+| Touchpad                   | Yes    | Works. wsconsctl mouse tap setting works for single finger tap (left click) only.  Two and Three finger taps not working currently. |
+| USB                        | Yes    | usb-c works at least with a Lenovo dock and it's ethernet nic. I have not tested display over usb-c yet.                            |
+| Video                      | Yes    | inteldrm - TigerLake                                                                                                                |
+| Webcam                     | ?      | uvideo detects the webcam I think but I haven't managed to get firefox to detect it yet.                                            |
+| Wireless                   | Yes    | Intel AX201 802.11n wireless card.  iwx driver. 2.4Ghz and 5Ghz channels.                                                           |
