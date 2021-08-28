@@ -27,15 +27,15 @@ any time on it.
 
 * Current OpenBSD Support Summary
 
-| Component                  | Works? | Notes                                                                                                                               |
-|----------------------------+--------+-------------------------------------------------------------------------------------------------------------------------------------|
-| Audio                      | Yes    | Speakers work. Microphone also works with `sysctl kern.audio.record=1`.                                                             |
-| Battery status             | Yes    | Shows up in apm.                                                                                                                    |
-| Bluetooth                  | No     | Shows up as a ugen device. OpenBSD does not support Bluetooth curerntly.                                                            |
-| Keyboard Backlight         | Yes    | Toggles with Fn+F4 between 5 brightness levels.                                                                                     |
-| Hibernation/Suspend/Resume | ?      | ZZZ shows an acpi error "S3 not available", screen turns off but the power doesnt shut off and fan keeps spinning.                  |
-| Touchpad                   | Yes    | Works. wsconsctl mouse tap setting works for single finger tap (left click) only.  Two and Three finger taps not working currently. |
-| USB                        | Yes    | usb-c works at least with a Lenovo dock and it's ethernet nic. I have not tested display over usb-c yet.                            |
-| Video                      | Yes    | inteldrm - TigerLake                                                                                                                |
-| Webcam                     | ?      | uvideo detects the webcam I think but I haven't managed to get firefox to detect it yet.                                            |
-| Wireless                   | Yes    | Intel AX201 802.11n wireless card.  iwx driver. 2.4Ghz and 5Ghz channels.                                                           |
+| Component                  | Works? | Notes                                                                                                                                                                                                            |
+|----------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Audio                      | Yes    | Speakers work. Microphone also works with `sysctl kern.audio.record=1`.                                                                                                                                          |
+| Battery status             | Yes    | Shows up in apm.                                                                                                                                                                                                 |
+| Bluetooth                  | No     | Shows up as a ugen device. OpenBSD does not support Bluetooth curerntly.                                                                                                                                         |
+| Keyboard Backlight         | Yes    | Toggles with Fn+F4 between 5 brightness levels.                                                                                                                                                                  |
+| Hibernation/Suspend/Resume | ?      | ZZZ shows an acpi error "S3 not available", screen turns off but the power doesnt shut off and fan keeps spinning.                                                                                               |
+| Touchpad                   | Yes    | Works. wsconsctl mouse tap setting works for single finger tap (left click) only.  Two and Three finger taps not working currently. Right click works when physically clicking the bottom right of the trackpad. |
+| USB                        | Yes    | usb-c works at least with a Lenovo dock and it's ethernet nic. I have not tested display over usb-c yet.                                                                                                         |
+| Video                      | Yes    | inteldrm - TigerLake                                                                                                                                                                                             |
+| Webcam                     | ?      | uvideo detects the webcam I think but I haven't managed to get firefox to detect it yet.                                                                                                                         |
+| Wireless                   | Yes    | Intel AX201 802.11n wireless card.  iwx driver. 2.4Ghz and 5Ghz channels.                                                                                                                                        |
